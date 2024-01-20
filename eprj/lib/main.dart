@@ -18,9 +18,29 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ProductListScreen(),
+      home: HomeScreen(),
     );
   }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Trang Chu"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ProductListScreen()),);
+          },
+          child: Text('Go to ProductListScreen'),
+        ),
+      ),
+    );
+  }
+
 }
 
 class ProductListScreen extends StatefulWidget {
